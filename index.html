@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm TTHCM</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-decor">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Trắc Nghiệm TTHCM</h1>
+            <div class="mode-selector">
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="normal" checked>
+                    <span class="custom-radio">Chế độ Thường</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="hard">
+                    <span class="custom-radio">Chế độ "Vòng Lặp"</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="wrong">
+                    <span class="custom-radio">Ôn câu sai</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="saved">
+                    <span class="custom-radio">Câu đã lưu</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="cram">
+                    <span class="custom-radio">⚡ Cấp tốc</span>
+                </label>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Tiến độ:</span>
+                    <span id="progress">0/0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Điểm:</span>
+                    <span id="score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="quiz-box">
+            <div class="question-header">
+                <span id="question-id" class="badge">ID: --</span>
+                <span id="question-number" class="badge">Câu 1</span>
+                <button id="save-btn" class="badge-btn">⭐ Lưu</button>
+            </div>
+            <div class="question-text" id="question-text">
+                Đang tải câu hỏi...
+            </div>
+            <div class="options-list" id="options-list">
+                <!-- Options will be generated here -->
+            </div>
+            <div class="feedback" id="feedback">
+                <!-- Feedback message here -->
+            </div>
+        </main>
+
+        <footer>
+            <button id="next-btn" class="btn" style="display: none;">Câu Tiếp Theo</button>
+            <button id="restart-btn" class="btn secondary">Làm Lại Từ Đầu</button>
+        </footer>
+    </div>
+
+    <!-- Load Data first -->
+    <script src="questions.js"></script>
+    <!-- Load Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
