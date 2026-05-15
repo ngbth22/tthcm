@@ -193,24 +193,9 @@ function selectOption(selectedItem, selectedKey) {
         }
         
         if (currentMode === 'hard') {
-            // Tính toán thông minh số câu lùi dựa trên số lần sai
-            const qId = q.id;
-            failCounts[qId] = (failCounts[qId] || 0) + 1;
-            localStorage.setItem(FAIL_COUNTS_KEY, JSON.stringify(failCounts));
-            
-            const count = failCounts[qId];
-            let stepsBack = 10; // Mặc định lần đầu sai lùi 10 câu
-            
-            if (count === 2) {
-                stepsBack = 7; // Lần 2 lùi 7 câu
-            } else if (count >= 3) {
-                stepsBack = 4; // Lần 3 trở đi lùi 4 câu (lặp lại nhanh hơn để nhớ)
-            }
-            
             const prevIndex = currentIndex;
-            currentIndex = Math.max(0, currentIndex - stepsBack);
-            
-            feedbackEl.textContent += ` | Vòng Lặp: Sai lần ${count}, lùi ${prevIndex - currentIndex} câu!`;
+            currentIndex = Math.max(0, currentIndex - 3);
+            feedbackEl.textContent += ` | Vòng Lặp: Sai, lùi 3 câu!`;
         }
         
         nextBtn.style.display = 'block';

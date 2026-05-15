@@ -334,14 +334,72 @@ footer {
 
 /* Responsive */
 @media (max-width: 640px) {
+    body {
+        padding: 10px;
+        align-items: center;
+    }
     .container {
-        padding: 20px;
+        padding: 15px;
+        margin: 0;
+        border-radius: 16px;
+        max-height: calc(100dvh - 20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    header {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
     }
     .mode-selector {
-        flex-direction: row;
         gap: 5px;
+        margin-bottom: 10px;
+    }
+    .custom-radio {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    .stats {
+        font-size: 0.85rem;
+    }
+    .question-header {
+        margin-bottom: 10px;
+    }
+    .question-text {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    .options-list {
+        gap: 8px;
+        overflow-y: auto;
+        max-height: 50vh;
+    }
+    .option-item {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .option-prefix {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+    .feedback {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        min-height: 20px;
     }
     footer {
-        flex-direction: column;
+        margin-top: 10px;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 }
